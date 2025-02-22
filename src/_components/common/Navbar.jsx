@@ -9,7 +9,7 @@ const Navbar = () => {
             Cine<span className="text-[#FF4949]">Flix</span>
           </h1>
         </div>
-        <div>
+        <div className="block sm:hidden">
           <MobileNavbar />
         </div>
       </nav>

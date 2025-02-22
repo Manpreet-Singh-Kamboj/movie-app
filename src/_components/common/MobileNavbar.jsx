@@ -43,7 +43,7 @@ const MobileNavbar = () => {
         }`}
       >
         <div className="flex justify-end py-4 px-4">
-          <X color="white" onClick={handleMobileNavOpen} width={35} />
+          <X color="white" width={35} />
         </div>
         {navbarLinks.map((link, index) => (
           <div key={index} className="py-2 px-3">

@@ -2,7 +2,7 @@ import MobileNavbar from "./MobileNavbar";
 
 const Navbar = () => {
   return (
-    <header className="py-3 px-4">
+    <header className="block sm:hidden py-3 px-4">
       <nav className="flex justify-between items-center">
         <div>
           <h1 className="text-white text-2xl md:text-3xl font-bold">

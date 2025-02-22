@@ -1,6 +1,7 @@
 import axios from "../../utils/axios";
 import { useEffect, useState } from "react";
 import Navbar from "../common/Navbar";
+import Sidebar from "../common/Sidebar";
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -32,12 +33,13 @@ const Home = () => {
   };
   useEffect(() => {
     refreshMovies();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div className="w-screen h-screen bg-black">
       <div>
         <Navbar />
+        <Sidebar />
+        <div className="flex"></div>
       </div>
     </div>
   );

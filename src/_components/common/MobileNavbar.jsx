@@ -10,13 +10,12 @@ const MobileNavbar = () => {
   const handleMobileNavOpen = () => {
     setMobileNavOpen((prev) => !prev);
   };
+  const handleClickOutside = () => {
+    if (!navRef.current) return;
+    setMobileNavOpen(false);
+  };
 
   useEffect(() => {
-    const handleClickOutside = () => {
-      if (!navRef.current) return;
-      setMobileNavOpen(false);
-    };
-
     if (mobileNavOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     } else {

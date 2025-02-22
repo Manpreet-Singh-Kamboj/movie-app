@@ -38,7 +38,7 @@ const MobileNavbar = () => {
 
       <div
         ref={navRef}
-        className={`fixed top-0 right-0 h-full w-[70%] bg-[#333] shadow-lg transition-all duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 h-full w-[70%] bg-[#181818] shadow-lg transition-all duration-300 ease-in-out ${
           mobileNavOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >

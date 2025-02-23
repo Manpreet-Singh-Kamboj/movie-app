@@ -20,3 +20,16 @@ export const navbarLinks = [
     path: "/tv-shows",
   },
 ];
+
+export const accountLinks = [
+  {
+    label: "Profile",
+    icon: "/profile.svg",
+    path: "/profile",
+  },
+  {
+    label: "Logout",
+    icon: "/logout.svg",
+    path: "/sign-in",
+  },
+];

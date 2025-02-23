@@ -1,7 +1,7 @@
 import axios from "../../utils/axios";
 import { useEffect, useState } from "react";
-import Navbar from "../common/Navbar";
 import Sidebar from "../common/Sidebar";
+import Header from "../common/Header";
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -35,11 +35,11 @@ const Home = () => {
     refreshMovies();
   }, []);
   return (
-    <div className="w-screen h-screen bg-black">
-      <div>
-        <Navbar />
+    <div className="w-screen h-screen bg-black flex flex-col">
+      <Header />
+      <div className="flex w-full h-full">
         <Sidebar />
-        <div className="flex"></div>
+        <div className="flex-1"></div>
       </div>
     </div>
   );

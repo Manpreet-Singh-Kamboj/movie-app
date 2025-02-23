@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import AuthLayout from "./_components/auth/AuthLayout";
-import Home from "./_components/home/Home";
+import Home from "./_components/core/Home";
 
 function App() {
   return (

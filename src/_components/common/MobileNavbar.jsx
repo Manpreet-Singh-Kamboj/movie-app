@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { navbarLinks } from "../../constants";
+import { accountLinks, navbarLinks } from "../../constants";
 import Navlink from "./Navlink";
 import { X } from "lucide-react";
 
@@ -26,7 +26,7 @@ const MobileNavbar = () => {
   }, [mobileNavOpen]);
 
   return (
-    <>
+    <div className="block sm:hidden">
       <button type="button" onClick={handleMobileNavOpen}>
         <img
           src="/menu.svg"
@@ -43,15 +43,29 @@ const MobileNavbar = () => {
         }`}
       >
         <div className="flex justify-end py-4 px-4">
-          <X color="white" width={35} />
+          <X color="rgb(229 231 235)" width={35} />
         </div>
-        {navbarLinks.map((link, index) => (
-          <div key={index} className="py-2 px-3">
-            <Navlink label={link.label} icon={link.icon} path={link.path} />
+        <div className="flex flex-col gap-2">
+          <p className="font-semibold text-white px-3 text-xl">Discover</p>
+          {navbarLinks.map((link, index) => (
+            <div key={index} className="py-2 px-3">
+              <Navlink label={link.label} icon={link.icon} path={link.path} />
+            </div>
+          ))}
+          <hr className="border-gray-400" />
+          <div className="px-4 flex flex-col gap-6 justify-center">
+            <p className="font-semibold sm:text-md text-xl text-white">
+              Your Account
+            </p>
+            {accountLinks.map((link, index) => (
+              <div key={index}>
+                <Navlink label={link.label} icon={link.icon} path={link.path} />
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

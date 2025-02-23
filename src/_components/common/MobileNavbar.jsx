@@ -26,7 +26,7 @@ const MobileNavbar = () => {
   }, [mobileNavOpen]);
 
   return (
-    <>
+    <div className="block sm:hidden">
       <button type="button" onClick={handleMobileNavOpen}>
         <img
           src="/menu.svg"
@@ -65,7 +65,7 @@ const MobileNavbar = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

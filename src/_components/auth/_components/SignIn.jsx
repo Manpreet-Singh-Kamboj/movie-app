@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Input from "./Input";
 
 const SignIn = () => {
   const [formData, setFormData] = useState({
@@ -29,31 +30,23 @@ const SignIn = () => {
         </h1>
       </div>
       <form className="bg-white flex flex-col p-6 w-[70%] md:w-[40%] rounded-3xl gap-2 relative z-[10]">
-        <label htmlFor="username" className="opacity-65 ml-[-0.2rem] text-sm">
-          Email address or Username
-        </label>
-        <input
-          id="username"
+        <Input
+          label="Email address or Username"
           name="username"
           type="text"
-          value={formData.username}
           placeholder="Your Email address or Username"
-          className="border-[1px] py-2 px-4 rounded-full text-sm"
-          onChange={handleChange}
-          required
+          value={formData.username}
+          handleChange={handleChange}
+          required={true}
         />
-        <label htmlFor="password" className="opacity-65 ml-[-0.2rem] text-sm">
-          Password
-        </label>
-        <input
-          id="password"
+        <Input
+          label="Password"
           name="password"
           type="password"
-          value={formData.password}
           placeholder="Your Password"
-          className="border-[1px] py-2 px-4 rounded-full text-sm"
-          onChange={handleChange}
-          required
+          value={formData.password}
+          handleChange={handleChange}
+          required={true}
         />
         <button
           type="submit"

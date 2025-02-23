@@ -1,4 +1,5 @@
 import MobileNavbar from "./MobileNavbar";
+import Search from "./Search";
 
 const Header = () => {
   return (
@@ -7,9 +8,8 @@ const Header = () => {
         <h2 className="text-white text-2xl md:text-3xl font-bold">
           Cine<span className="text-[#FF4949]">Flix</span>
         </h2>
-        <div className="block sm:hidden">
-          <MobileNavbar />
-        </div>
+        <Search />
+        <MobileNavbar />
       </nav>
     </header>
   );

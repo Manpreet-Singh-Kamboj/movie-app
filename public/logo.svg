@@ -1,0 +1,5 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" fill="black"/>
+  <text x="30" y="130" font-family="Arial" font-size="100" font-weight="bold" fill="white">C</text>
+  <text x="110" y="130" font-family="Arial" font-size="100" font-weight="bold" fill="red">F</text>
+</svg>

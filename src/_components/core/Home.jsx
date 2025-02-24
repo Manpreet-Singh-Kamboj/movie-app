@@ -21,9 +21,9 @@ const Home = () => {
   return (
     <div className="relative w-screen h-screen bg-black flex flex-col">
       <Header />
-      <div className="relative flex w-full h-full">
+      <div className="relative flex w-full h-full overflow-y-auto">
         <Sidebar />
-        <div className="w-full flex-grow">
+        <div className="w-full sm:w-[70%] md:w-[75%] h-full flex-1 overflow-y-scroll">
           <TrendingMovie />
         </div>
       </div>

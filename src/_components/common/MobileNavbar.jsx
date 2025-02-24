@@ -1,32 +1,17 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { accountLinks, navbarLinks } from "../../constants";
 import Navlink from "./Navlink";
 import { X } from "lucide-react";
 
 const MobileNavbar = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
-  const navRef = useRef(null);
 
   const handleMobileNavOpen = () => {
     setMobileNavOpen((prev) => !prev);
   };
-  const handleClickOutside = () => {
-    if (!navRef.current) return;
-    setMobileNavOpen(false);
-  };
-
-  useEffect(() => {
-    if (mobileNavOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [mobileNavOpen]);
 
   return (
-    <div className="block sm:hidden">
+    <div className="block sm:hidden z-[10]">
       <button type="button" onClick={handleMobileNavOpen}>
         <img
           src="/menu.svg"
@@ -37,13 +22,18 @@ const MobileNavbar = () => {
       </button>
 
       <div
-        ref={navRef}
-        className={`fixed top-0 right-0 h-full w-[70%] bg-[#181818] shadow-lg transition-all duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 h-full w-[70%] bg-[#181818] shadow-lg transition-all duration-300 ease-in-out border-l border-gray-400 ${
           mobileNavOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="flex justify-end py-4 px-4">
-          <X color="rgb(229 231 235)" width={35} />
+          <button
+            type="button"
+            onClick={handleMobileNavOpen}
+            className="border border-gray-400 py-1 px-1 rounded-lg"
+          >
+            <X color="rgb(229 231 235)" width={20} height={20} />
+          </button>
         </div>
         <div className="flex flex-col gap-2">
           <p className="font-semibold text-white px-3 text-xl">Discover</p>

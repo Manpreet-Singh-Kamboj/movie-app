@@ -6,7 +6,7 @@ import Header from "../common/Header";
 const Home = () => {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
-  // const [hasMore, setHasMore] = useState(true);
+  const [hasMore, setHasMore] = useState(true);
   const fetchMovies = async () => {
     try {
       const { data } = await axios.get(
@@ -14,9 +14,10 @@ const Home = () => {
       );
       if (data.results.length > 0) {
         setMovies((prevState) => [...prevState, ...data.results]);
+        console.log(data.results);
         setPage((prev) => prev + 1);
       } else {
-        // setHasMore(false);
+        setHasMore(false);
       }
     } catch (error) {
       console.error("Error fetching movies", error);
@@ -35,11 +36,11 @@ const Home = () => {
     refreshMovies();
   }, []);
   return (
-    <div className="w-screen h-screen bg-black flex flex-col">
+    <div className="relative w-screen h-screen bg-black flex flex-col">
       <Header />
-      <div className="flex w-full h-full">
+      <div className="relative flex w-full h-full">
         <Sidebar />
-        <div className="flex-1"></div>
+        <div className="w-full flex-grow"></div>
       </div>
     </div>
   );

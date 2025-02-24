@@ -1,0 +1,50 @@
+<svg
+      width="200"
+      height="300"
+      viewBox="0 0 200 300"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="200" height="300" rx="12" fill="black" />
+      <rect width="200" height="300" rx="12" fill="url(#redGlow)" opacity="0.6" />
+      <text
+        x="40%"
+        y="150"
+        font-size="55"
+        fill="white"
+        text-anchor="middle"
+        fontWeight="bold"
+        fontFamily="Arial, sans-serif"
+      >
+        C
+      </text>
+      <text
+        x="60%"
+        y="150"
+        font-size="55"
+        fill="red"
+        text-anchor="middle"
+        fontWeight="bold"
+        fontFamily="Arial, sans-serif"
+      >
+        N
+      </text>
+
+      <text
+        x="15%"
+        y="200"
+        fontSize="16"
+        fill="white"
+        textAnchor="middle"
+        fontWeight="bold"
+        fontFamily="Arial, sans-serif"
+      >
+        Image not available
+      </text>
+      <defs>
+        <radialGradient id="redGlow" cx="0.5" cy="0.5" r="0.8">
+          <stop offset="10%" stopColor="rgba(255, 0, 0, 0.3)" />
+          <stop offset="100%" stopColor="black" />
+        </radialGradient>
+      </defs>
+    </svg>

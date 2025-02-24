@@ -1,46 +1,31 @@
-import axios from "../../utils/axios";
-import { useEffect, useState } from "react";
 import Sidebar from "../common/Sidebar";
 import Header from "../common/Header";
+import TrendingMovie from "./_components/TrendingMovie";
+import { useEffect } from "react";
+import axios from "../../utils/axios";
+import { useDispatch } from "react-redux";
+import { setGenres } from "../../store/slices/GenreSlice";
 
 const Home = () => {
-  const [movies, setMovies] = useState([]);
-  const [page, setPage] = useState(1);
-  const [hasMore, setHasMore] = useState(true);
-  const fetchMovies = async () => {
-    try {
-      const { data } = await axios.get(
-        `/trending/all/day?language=en-US&page=${page}`
-      );
-      if (data.results.length > 0) {
-        setMovies((prevState) => [...prevState, ...data.results]);
-        console.log(data.results);
-        setPage((prev) => prev + 1);
-      } else {
-        setHasMore(false);
-      }
-    } catch (error) {
-      console.error("Error fetching movies", error);
-    }
-  };
-  const refreshMovies = () => {
-    if (movies.length === 0) {
-      fetchMovies();
-    } else {
-      setPage(1);
-      setMovies([]);
-      fetchMovies();
-    }
-  };
+  const dispatch = useDispatch();
   useEffect(() => {
-    refreshMovies();
+    (async function fetchGenres() {
+      try {
+        const { data } = await axios.get(`/genre/movie/list`);
+        dispatch(setGenres(data.genres));
+      } catch (error) {
+        console.log("Error while fetching genres: ", error);
+      }
+    })();
   }, []);
   return (
     <div className="relative w-screen h-screen bg-black flex flex-col">
       <Header />
       <div className="relative flex w-full h-full">
         <Sidebar />
-        <div className="w-full flex-grow"></div>
+        <div className="w-full flex-grow">
+          <TrendingMovie />
+        </div>
       </div>
     </div>
   );

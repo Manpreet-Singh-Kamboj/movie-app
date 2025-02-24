@@ -3,6 +3,7 @@ import axios from "../../../utils/axios";
 import Genres from "./Genres";
 import Button from "./Button";
 import { ChevronRightCircleIcon, CirclePlayIcon } from "lucide-react";
+import HorizontalCards from "./HorizontalCards";
 
 const TrendingMovie = () => {
   const [movies, setMovies] = useState([]);
@@ -37,11 +38,11 @@ const TrendingMovie = () => {
 
   return (
     <div className="text-white flex flex-col w-full h-full">
-      <div className="relative w-full h-[80%] max-h-[80vh] overflow-hidden">
+      <div className="flex shrink-0 relative w-full h-[80%] max-h-[55vh] md:max-h-[65vh] overflow-hidden">
         {randomTrendingMovie ? (
           <div className="w-full h-full">
             <img
-              src={`https://image.tmdb.org/t/p/original${
+              src={`${import.meta.env.VITE_TMDB_IMAGE_URL}${
                 randomTrendingMovie.backdrop_path ||
                 randomTrendingMovie.poster_path
               }`}
@@ -90,6 +91,16 @@ const TrendingMovie = () => {
           </div>
         ) : null}
       </div>
+      {movies.length > 0 ? (
+        <div className="flex shrink-0 mt-5 overflow-x-scroll overflow-y-hidden">
+          <HorizontalCards movies={movies} />
+        </div>
+      ) : null}
+      {movies.length > 0 ? (
+        <div className="flex shrink-0 mt-5 overflow-x-scroll overflow-y-hidden">
+          <HorizontalCards movies={movies} />
+        </div>
+      ) : null}
     </div>
   );
 };

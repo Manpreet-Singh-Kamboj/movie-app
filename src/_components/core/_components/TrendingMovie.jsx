@@ -1,8 +1,10 @@
 import Genres from "./Genres";
 import Button from "./Button";
 import { ChevronRightCircleIcon, CirclePlayIcon } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const TrendingMovie = ({ movie }) => {
+  const navigate = useNavigate();
   return (
     <div className="text-white flex flex-col w-full">
       <div className="flex shrink-0 relative w-full h-[55vh] md:h-[65vh] max-h-[55vh] md:max-h-[65vh] overflow-hidden">
@@ -34,7 +36,9 @@ const TrendingMovie = ({ movie }) => {
               )}
               <div className="flex gap-3 justify-center items-center flex-col md:flex-row">
                 <Button
-                  onClick={() => {}}
+                  onClick={() => {
+                    navigate(`/movie/${movie.id}/details`);
+                  }}
                   placeholder={"Watch Now"}
                   icon={<CirclePlayIcon />}
                   classnames={"bg-white"}

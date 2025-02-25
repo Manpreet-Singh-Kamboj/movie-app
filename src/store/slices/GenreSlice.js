@@ -6,7 +6,7 @@ const initialState = {
 
 const genreSlice = createSlice({
   name: "genres",
-  initialState: initialState,
+  initialState,
   reducers: {
     setGenres: (state, action) => {
       state.genres = action.payload;

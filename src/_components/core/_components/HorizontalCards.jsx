@@ -7,16 +7,22 @@ const HorizontalCards = ({ title, movies, path }) => {
     <div className="flex flex-col w-[100%]">
       <div className="flex items-center justify-between px-2 py-2 text-white">
         <h2 className="font-bold text-2xl">{title || ""}</h2>
-        <Link
-          to={path || "/"}
-          className="flex items-center gap-1 transition-all duration-300 ease-in hover:underline text-sm"
-        >
-          Explore more <ChevronRight className="w-4 h-4" />
-        </Link>
+        {path ? (
+          <Link
+            to={path}
+            className="flex items-center gap-1 transition-all duration-300 ease-in hover:underline text-sm"
+          >
+            Explore more <ChevronRight className="w-4 h-4" />
+          </Link>
+        ) : null}
       </div>
       <div className="flex gap-10 h-70 py-2.5 px-2 overflow-x-scroll">
         {movies.map((movie, index) => (
-          <div key={index} className="relative flex shrink-0 w-40 h-50 md:h-40">
+          <Link
+            to={`/movie/${movie.id}/details`}
+            key={index}
+            className="relative flex shrink-0 w-40 h-50 md:h-40"
+          >
             <div className="w-full">
               <img
                 src={
@@ -30,11 +36,11 @@ const HorizontalCards = ({ title, movies, path }) => {
                 width={"100%"}
                 className="object-cover object-center rounded-lg"
               />
-              <p className="text-center truncate whitespace-nowrap line-clamp-1">
+              <p className="text-center truncate whitespace-nowrap line-clamp-1 text-white">
                 {movie.title || movie.original_title}
               </p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

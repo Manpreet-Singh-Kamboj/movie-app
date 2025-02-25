@@ -1,6 +1,13 @@
-const Loader = () => {
+import clsx from "clsx";
+
+const Loader = ({ classes }) => {
   return (
-    <div className="flex items-center justify-center h-[20vh] bg-black">
+    <div
+      className={clsx(
+        "flex items-center justify-center h-[20vh] bg-black",
+        classes
+      )}
+    >
       <svg
         width="100"
         height="100"

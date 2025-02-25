@@ -1,9 +1,9 @@
 const Card = ({ movies }) => {
   if (!movies || movies.length === 0) return null;
   return (
-    <div className="flex flex-wrap gap-10 justify-center px-3">
+    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 px-4 md:px-8">
       {movies.map((movie) => (
-        <div key={movie.id} className="flex w-[45%] sm:w-[15%] flex-col gap-2">
+        <div key={movie.id} className="flex flex-col gap-2">
           <img
             src={
               movie.poster_path || movie.backdrop_path

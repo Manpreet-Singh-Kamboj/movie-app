@@ -65,6 +65,7 @@ const Home = () => {
         <Sidebar />
         <div className="w-full sm:w-[70%] md:w-[75%] flex-1 overflow-y-scroll">
           <TrendingMovie movie={randomTrendingMovie} />
+          <div className="px-4 md:px-6">
           <MovieScroller
             title="Trending 🔥"
             movies={trendingMovies}
@@ -75,6 +76,7 @@ const Home = () => {
             movies={discoverMovies}
             path="/discover"
           />
+          </div>
         </div>
       </div>
     </div>

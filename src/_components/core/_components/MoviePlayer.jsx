@@ -28,6 +28,7 @@ const MoviePlayer = () => {
         <iframe
           src={`https://vidsrc.cc/v2/embed/movie/${id}?autoplay=true`}
           className="w-full h-full m-10"
+          allowFullScreen="true"
         ></iframe>
       ) : (
         <Navigate to={"/"} />

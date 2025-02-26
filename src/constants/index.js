@@ -1,8 +1,8 @@
 export const navbarLinks = [
   {
-    label: "Popular",
-    icon: "/popular.svg",
-    path: "/popular",
+    label: "Home",
+    icon: "/home.svg",
+    path: "/",
   },
   {
     label: "Trending",
@@ -12,12 +12,7 @@ export const navbarLinks = [
   {
     label: "Movies",
     icon: "/movies.svg",
-    path: "/movies",
-  },
-  {
-    label: "TV Shows",
-    icon: "/tv.svg",
-    path: "/tv-shows",
+    path: "/discover",
   },
 ];
 

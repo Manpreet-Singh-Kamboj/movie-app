@@ -1,5 +1,11 @@
 import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 
+{
+  /* <iframe
+          src={`https://www.2embed.stream/embed/movie/${id}`}
+          className="w-full h-full m-10"
+        ></iframe> */
+}
 const MoviePlayer = () => {
   const { id } = useParams();
 
@@ -13,8 +19,8 @@ const MoviePlayer = () => {
       ></Link>
       {id ? (
         <iframe
-          src={`https://www.2embed.stream/embed/movie/${id}`}
-          className="w-full h-full m-2"
+          src={`https://multiembed.mov/directstream.php?video_id=${id}&tmdb=1`}
+          className="w-full h-full m-10"
         ></iframe>
       ) : (
         <Navigate to={"/"} />

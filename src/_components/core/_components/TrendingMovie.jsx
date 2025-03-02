@@ -56,12 +56,6 @@ const TrendingMovie = ({ movie }) => {
           </div>
         ) : null}
       </div>
-
-      {/* {movies.length > 0 ? (
-        <div className="flex shrink-0 mt-5 overflow-x-scroll">
-          <HorizontalCards movies={movies} />
-        </div>
-      ) : null} */}
     </div>
   );
 };

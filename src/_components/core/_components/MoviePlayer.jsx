@@ -13,6 +13,8 @@ import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
         ></iframe> */
 }
 
+// https://vidsrc.cc/v2/embed/movie/${id}
+
 const MoviePlayer = () => {
   const { id } = useParams();
 
@@ -26,7 +28,7 @@ const MoviePlayer = () => {
       ></Link>
       {id ? (
         <iframe
-          src={`https://vidsrc.cc/v2/embed/movie/${id}?autoplay=true`}
+          src={`https://www.2embed.stream/embed/movie/${id}`}
           className="w-full h-full m-10"
           allowFullScreen="true"
         ></iframe>
